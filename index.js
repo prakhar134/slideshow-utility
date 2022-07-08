@@ -8,8 +8,10 @@ class Slideshow{
     cumultivedeltaYThreshold = 1500;
     iObserver
     intersectItem;
-    constructor(threshold, intersectItem, slideThresholds){
+    cb;
+    constructor(threshold, intersectItem, slideThresholds, cb){
         this.intersectItem = intersectItem;
+        this.cb = cb;
         this.iObserver = new IntersectionObserver(items => {
             console.log(items)
             if(items[0].intersectionRatio > threshold - 0.01 && !this.isStuck){
@@ -51,6 +53,7 @@ class Slideshow{
             } else {
                 this.currentStage++
             }
+            this.cb(this.currentStage)
             console.log(`current stage ${this.currentStage}`);
         }
     }
