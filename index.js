@@ -1,17 +1,3 @@
-const genericPitchData = [
-    {
-        pitch: "hello pitch 1"
-    },
-    {
-        pitch: "hello pitch 2"   
-    },
-    {
-        pitch: "hello pitch 3"
-    }
-]
-
-let minTime = 1000
-
 // This class holds the responsibilty of observing the component, sticking it to the viewport and navigate through the slideshow for the user.
 
 class Slideshow{
